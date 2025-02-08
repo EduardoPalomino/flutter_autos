@@ -1,0 +1,19 @@
+1. Ir dentro de la carpeta "GENERADOR-FLUTTER" del repositorio.
+2. Copiar la carpeta "generador_flutter" dentro de la carpeta del proyecto Flutter en el que estás trabajando.
+3. Reemplazar la carpeta "lib" del proyecto Flutter por la que se encuentra dentro de "GENERADOR-FLUTTER".
+4. Copiar y reemplazar el archivo "pubspec.yaml" en el proyecto con el archivo "pubspec.yaml" que se encuentra dentro de "GENERADOR-FLUTTER".
+
+# Activar generadores
+dart generate_model.dart user id,nombre,password,email,rol_id
+dart generate_repository.dart user
+dart generate_bloc.dart user
+
+
+dart generate_model.dart rol id,nombre
+dart generate_repository.dart rol id,nombre
+dart generate_bloc.dart rol id,nombre
+//PANTALLAS
+dart generate_screen.dart user id,nombre
+
+wigets existentes en material :
+https://api.flutter.dev/flutter/material/material-library.html
