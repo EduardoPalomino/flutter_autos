@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../data/models/rol.dart';
 
-class RoleDetailScreen extends StatelessWidget {
+class RolDetailScreen extends StatelessWidget {
   final Rol rol;
 
-  RoleDetailScreen({required this.rol});
+  RolDetailScreen({required this.rol});
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +15,8 @@ class RoleDetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("ID: ${rol.id}", style: TextStyle(fontSize: 16)),
-            SizedBox(height: 10),
-            Text("Nombre: ${rol.nombre}", style: TextStyle(fontSize: 16)),
+            Text("id: ${rol.id}", style: TextStyle(fontSize: 16)),
+Text("nombre: ${rol.nombre}", style: TextStyle(fontSize: 16)),
             SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {

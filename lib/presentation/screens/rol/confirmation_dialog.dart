@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ConfirmationDialog extends StatelessWidget {
   final VoidCallback onConfirm;
 
-  ConfirmationDialog({required this.onConfirm});
+  const ConfirmationDialog({required this.onConfirm, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class ConfirmationDialog extends StatelessWidget {
         TextButton(
           onPressed: () {
             onConfirm();
-            return Navigator.pop(context);
+            Navigator.pop(context);
           },
           child: Text("Sí"),
         ),

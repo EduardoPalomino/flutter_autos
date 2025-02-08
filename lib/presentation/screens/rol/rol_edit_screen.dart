@@ -4,12 +4,12 @@ import '../../../business_logic/blocs/rol/rol_bloc.dart';
 import '../../../data/models/rol.dart';
 import '../../widgets/custom_text_field.dart';
 
-class RoleEditScreen extends StatelessWidget {
+class RolEditScreen extends StatelessWidget {
   final Rol rol;
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _nameController = TextEditingController();
 
-  RoleEditScreen({required this.rol}) {
+  RolEditScreen({required this.rol}) {
     _nameController.text = rol.nombre;
   }
 
@@ -27,7 +27,7 @@ class RoleEditScreen extends StatelessWidget {
                 controller: _nameController,
                 texto: "Nombre del Rol",
                 validator: (value) {
-                  if (value == null || value.isEmpty) { // Verifica si value es null o está vacío
+                  if (value == null || value.isEmpty) {
                     return "Campo obligatorio";
                   }
                   return null;

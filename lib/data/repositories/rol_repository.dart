@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class RolRepository {
-  final String _baseUrl = 'http://localhost:3009/Rols';
+  final String _baseUrl = 'https://tu-api.com/rols';
 
   Future<List<Rol>> getRols() async {
     final response = await http.get(Uri.parse(_baseUrl));
@@ -17,23 +17,18 @@ class RolRepository {
 
   Future<void> addRol(String nombre) async {
     final response = await http.post(
-      Uri.parse('$_baseUrl/create'),
+      Uri.parse(_baseUrl),
       body: json.encode({'nombre': nombre}),
       headers: {'Content-Type': 'application/json'},
     );
-
-    print('Response status: ${response.statusCode}'); // Agrega esto
-    print('Response body: ${response.body}'); // Agrega esto
-
     if (response.statusCode != 201) {
       throw Exception('Error al agregar rol');
     }
-
   }
 
-  Future<void> updateRol(String id, String nombre) async {
+  Future<void> updateRol(int id, String nombre) async {
     final response = await http.put(
-      Uri.parse('$_baseUrl/update/$id'),
+      Uri.parse('$_baseUrl/$id'),
       body: json.encode({'nombre': nombre}),
       headers: {'Content-Type': 'application/json'},
     );
@@ -42,18 +37,10 @@ class RolRepository {
     }
   }
 
-  Future<void> deleteRol(String id) async {
-    final response = await http.delete(Uri.parse('$_baseUrl/delete/$id'));
-    print('REPOSITORY');
-    print('Response deleteRol: ${response.statusCode}');
-    if (response.statusCode != 200) {
+  Future<void> deleteRol(int id) async {
+    final response = await http.delete(Uri.parse('$_baseUrl/$id'));
+    if (response.statusCode != 204) {
       throw Exception('Error al eliminar rol');
     }
   }
-
-
-
-
-
-
 }

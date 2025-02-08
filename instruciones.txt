@@ -13,7 +13,7 @@ dart generate_model.dart rol id,nombre
 dart generate_repository.dart rol id,nombre
 dart generate_bloc.dart rol id,nombre
 //PANTALLAS
-dart generate_screen.dart user id,nombre
+dart generate_screen.dart rol id,nombre
 
 wigets existentes en material :
 https://api.flutter.dev/flutter/material/material-library.html

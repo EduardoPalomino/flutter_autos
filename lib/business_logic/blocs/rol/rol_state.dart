@@ -1,26 +1,17 @@
 part of 'rol_bloc.dart';
 
-abstract class RolState extends Equatable { // <-- Extiende Equatable
-  const RolState();
+abstract class RolState {}
 
-  @override
-  List<Object> get props => [];
-}
 class RolInitialState extends RolState {}
 
 class RolLoadingState extends RolState {}
 
-class RolSuccessState extends RolState {
-  final List<Rol> roles;
-  const RolSuccessState(this.roles);
-  @override
-  List<Object> get props => [roles];
+class RolLoadedState extends RolState {
+  final List<Rol> items;
+  RolLoadedState(this.items);
 }
 
 class RolErrorState extends RolState {
   final String message;
   RolErrorState(this.message);
-
-  @override
-  List<Object> get props => [message];
 }
